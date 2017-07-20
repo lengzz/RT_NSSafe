@@ -13,8 +13,6 @@
 		4C578A301F209E1800D83C28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C578A2E1F209E1800D83C28 /* Main.storyboard */; };
 		4C578A321F209E1800D83C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C578A311F209E1800D83C28 /* Assets.xcassets */; };
 		4C578A351F209E1800D83C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C578A331F209E1800D83C28 /* LaunchScreen.storyboard */; };
-		4C578A401F209E1800D83C28 /* RT_NSSafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C578A3F1F209E1800D83C28 /* RT_NSSafeTests.m */; };
-		4C578A4B1F209E1800D83C28 /* RT_NSSafeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C578A4A1F209E1800D83C28 /* RT_NSSafeUITests.m */; };
 		4C578A5A1F209E8500D83C28 /* NSObject+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C578A591F209E8500D83C28 /* NSObject+Safe.m */; };
 /* End PBXBuildFile section */
 
@@ -47,11 +45,7 @@
 		4C578A341F209E1800D83C28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C578A361F209E1800D83C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C578A3B1F209E1800D83C28 /* RT_NSSafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RT_NSSafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C578A3F1F209E1800D83C28 /* RT_NSSafeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RT_NSSafeTests.m; sourceTree = "<group>"; };
-		4C578A411F209E1800D83C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C578A461F209E1800D83C28 /* RT_NSSafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RT_NSSafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C578A4A1F209E1800D83C28 /* RT_NSSafeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RT_NSSafeUITests.m; sourceTree = "<group>"; };
-		4C578A4C1F209E1800D83C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C578A581F209E8500D83C28 /* NSObject+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Safe.h"; sourceTree = "<group>"; };
 		4C578A591F209E8500D83C28 /* NSObject+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Safe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				4C578A241F209E1800D83C28 /* RT_NSSafe */,
-				4C578A3E1F209E1800D83C28 /* RT_NSSafeTests */,
-				4C578A491F209E1800D83C28 /* RT_NSSafeUITests */,
 				4C578A231F209E1800D83C28 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,24 +117,6 @@
 				4C578A261F209E1800D83C28 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4C578A3E1F209E1800D83C28 /* RT_NSSafeTests */ = {
-			isa = PBXGroup;
-			children = (
-				4C578A3F1F209E1800D83C28 /* RT_NSSafeTests.m */,
-				4C578A411F209E1800D83C28 /* Info.plist */,
-			);
-			path = RT_NSSafeTests;
-			sourceTree = "<group>";
-		};
-		4C578A491F209E1800D83C28 /* RT_NSSafeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4C578A4A1F209E1800D83C28 /* RT_NSSafeUITests.m */,
-				4C578A4C1F209E1800D83C28 /* Info.plist */,
-			);
-			path = RT_NSSafeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C578A401F209E1800D83C28 /* RT_NSSafeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C578A4B1F209E1800D83C28 /* RT_NSSafeUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
