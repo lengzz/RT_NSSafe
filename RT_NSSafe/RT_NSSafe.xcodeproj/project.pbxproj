@@ -15,6 +15,7 @@
 		4C578A351F209E1800D83C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C578A331F209E1800D83C28 /* LaunchScreen.storyboard */; };
 		4C578A401F209E1800D83C28 /* RT_NSSafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C578A3F1F209E1800D83C28 /* RT_NSSafeTests.m */; };
 		4C578A4B1F209E1800D83C28 /* RT_NSSafeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C578A4A1F209E1800D83C28 /* RT_NSSafeUITests.m */; };
+		4C578A5A1F209E8500D83C28 /* NSObject+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C578A591F209E8500D83C28 /* NSObject+Safe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		4C578A461F209E1800D83C28 /* RT_NSSafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RT_NSSafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C578A4A1F209E1800D83C28 /* RT_NSSafeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RT_NSSafeUITests.m; sourceTree = "<group>"; };
 		4C578A4C1F209E1800D83C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C578A581F209E8500D83C28 /* NSObject+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Safe.h"; sourceTree = "<group>"; };
+		4C578A591F209E8500D83C28 /* NSObject+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Safe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		4C578A241F209E1800D83C28 /* RT_NSSafe */ = {
 			isa = PBXGroup;
 			children = (
+				4C578A581F209E8500D83C28 /* NSObject+Safe.h */,
+				4C578A591F209E8500D83C28 /* NSObject+Safe.m */,
 				4C578A281F209E1800D83C28 /* AppDelegate.h */,
 				4C578A291F209E1800D83C28 /* AppDelegate.m */,
 				4C578A2B1F209E1800D83C28 /* ViewController.h */,
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C578A5A1F209E8500D83C28 /* NSObject+Safe.m in Sources */,
 				4C578A2D1F209E1800D83C28 /* ViewController.m in Sources */,
 				4C578A2A1F209E1800D83C28 /* AppDelegate.m in Sources */,
 				4C578A271F209E1800D83C28 /* main.m in Sources */,

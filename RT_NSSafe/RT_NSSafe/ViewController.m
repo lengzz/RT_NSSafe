@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    //NSArray
+    NSArray *arr = [NSArray array];
+    //数组越界
+    NSLog(@"%@",arr[2]);
+    id obj = nil;
+    NSMutableArray *arr1 = [NSMutableArray array];
+    [arr1 addObject:obj];
+    NSLog(@"%@",arr1[1]);
 }
 
 
