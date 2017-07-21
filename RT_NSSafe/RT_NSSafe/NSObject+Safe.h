@@ -23,3 +23,15 @@
 @interface NSMutableArray (Safe)
 
 @end
+
+/////////
+
+@interface NSDictionary (Safe)
+
+@end
+
+/////////
+
+@interface NSMutableDictionary (Safe)
+
+@end

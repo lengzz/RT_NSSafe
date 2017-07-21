@@ -197,3 +197,130 @@
 }
 
 @end
+
+@implementation NSDictionary(Safe)
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        //class methods
+        [self swizzleClassSel:@selector(dictionaryWithObject:forKey:) withSel:@selector(safeDictionaryWithObject:forKey:)];
+        [self swizzleClassSel:@selector(dictionaryWithObjects:forKeys:count:) withSel:@selector(safeDictionaryWithObjects:forKeys:count:)];
+        
+        //instance methods
+        /* 字典有内容obj类型才是__NSDictionaryI */
+        Class cls = NSClassFromString(@"__NSDictionaryI");
+        [cls swizzleInstanceSel:@selector(objectForKey:) withSel:@selector(safeObjectForKey:)];
+        
+        /* iOS10 以上，单个内容类型是__NSSingleEntryDictionaryI */
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0){
+            cls = NSClassFromString(@"__NSSingleEntryDictionaryI");
+            [cls swizzleInstanceSel:@selector(objectForKey:) withSel:@selector(safeObjectForKey1:)];
+        }
+        
+        /* iOS9 以上，没内容类型是__NSDictionary0 */
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
+            cls = NSClassFromString(@"__NSDictionary0");
+            [cls swizzleInstanceSel:@selector(objectForKey:) withSel:@selector(safeObjectForKey0:)];
+        }
+    });
+}
+
++ (instancetype)safeDictionaryWithObject:(id)obj forKey:(id)key
+{
+    if (obj && key) {
+        return [self safeDictionaryWithObject:obj forKey:key];
+    }
+    return nil;
+}
+
++ (instancetype)safeDictionaryWithObjects:(const id [])objects forKeys:(const id [])keys count:(NSUInteger)cnt
+{
+    NSInteger index = 0;
+    id ks[cnt];
+    id objs[cnt];
+    for (NSInteger i = 0; i < cnt; i++)
+    {
+        if (objects[i] && keys[i]) {
+            ks[index] = keys[i];
+            objs[index] = objects[i];
+            index++;
+        }
+        else
+        {
+        
+        }
+    }
+    return [self safeDictionaryWithObjects:objs forKeys:ks count:index];
+}
+
+- (id)safeObjectForKey:(id)aKey
+{
+    if (aKey)
+    {
+        return [self safeObjectForKey:aKey];
+    }
+    return nil;
+}
+
+- (id)safeObjectForKey1:(id)aKey
+{
+    if (aKey)
+    {
+        return [self safeObjectForKey1:aKey];
+    }
+    return nil;
+}
+
+- (id)safeObjectForKey0:(id)aKey
+{
+    if (aKey)
+    {
+        return [self safeObjectForKey0:aKey];
+    }
+    return nil;
+}
+
+@end
+
+@implementation NSMutableDictionary(Safe)
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class cls = NSClassFromString(@"__NSDictionaryM");
+        //instance methods
+        [cls swizzleInstanceSel:@selector(objectForKey:) withSel:@selector(safeObjectForKey:)];
+        [cls swizzleInstanceSel:@selector(setObject:forKey:) withSel:@selector(safeSetObject:forKey:)];
+        [cls swizzleInstanceSel:@selector(removeObjectForKey:) withSel:@selector(safeRemoveObjectForKey:)];
+    });
+}
+
+- (id)safeObjectForKey:(id)aKey
+{
+    if (aKey)
+    {
+        return [self safeObjectForKey:aKey];
+    }
+    return nil;
+}
+
+- (void)safeRemoveObjectForKey:(id)aKey
+{
+    if (aKey)
+    {
+        [self safeRemoveObjectForKey:aKey];
+    }
+}
+
+- (void)safeSetObject:(id)obj forKey:(id)aKey
+{
+    if (obj && aKey)
+    {
+        [self safeSetObject:obj forKey:aKey];
+    }
+}
+
+@end
